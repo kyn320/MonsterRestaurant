@@ -9,6 +9,8 @@ public class MapGenerator : MonoBehaviour
     public Vector3 mapSize;
     public Vector3 tileSize;
 
+    public float yOffset = 0.1f;
+
     public int waterDeep = -1;
 
     public List<GameObject> tileList;
@@ -85,6 +87,8 @@ public class MapGenerator : MonoBehaviour
                 yPos -= yPos % tileSize.y;
                 yPos /= tileSize.y;
 
+                float y = yPos * 0.5f * yOffset;
+
                 GameObject g;
                 if (yPos > waterDeep)
                 {
@@ -97,7 +101,7 @@ public class MapGenerator : MonoBehaviour
                     g.transform.parent = notWalkalbeCubeFolder.transform;
                 }
 
-                g.transform.position = startPos + Vector3.right * x * tileSize.x + Vector3.forward * z * tileSize.z;// + Vector3.up * yPos;
+                g.transform.position = startPos + Vector3.right * x * tileSize.x + Vector3.forward * z * tileSize.z + Vector3.up * y;
             }
         }
 

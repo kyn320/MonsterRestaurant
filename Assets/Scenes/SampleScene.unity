@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -421,12 +421,12 @@ Prefab:
     - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
         type: 2}
       propertyPath: noiseOffeset.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
         type: 2}
       propertyPath: noiseOffeset.y
-      value: 258
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
         type: 2}
@@ -437,6 +437,11 @@ Prefab:
         type: 2}
       propertyPath: waterDeep
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
+        type: 2}
+      propertyPath: yOffset
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88ce0858bac38564f82061ad8c80a800, type: 2}
