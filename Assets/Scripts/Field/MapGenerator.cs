@@ -31,6 +31,8 @@ public class MapGenerator : MonoBehaviour
 
         FieldManager.Instance.SpawnAction();
 
+        folder.transform.rotation = Quaternion.Euler(0, 45, 0);
+
         walkable.AddComponent<NavMeshSurface>();
         walkable.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
         walkable.GetComponent<NavMeshSurface>().defaultArea = 0;

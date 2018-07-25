@@ -31,6 +31,8 @@ public class Spawner : MonoBehaviour
 
         if (isObstacle)
             folder.transform.parent = FieldManager.Instance.GetWalkable().transform;
+        else
+            folder.transform.parent = FieldManager.Instance.GetNotWalkable().transform;
 
         for (int i = 0; i < spawnPoints.Length; ++i)
         {
