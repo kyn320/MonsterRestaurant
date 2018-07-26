@@ -32,7 +32,13 @@ public class FieldManager : Singleton<FieldManager>
     public void SpawnAction()
     {
         if (spawnAction != null)
+        {
             spawnAction.Invoke();
+
+        
+            print("spawn action");
+        }
+
     }
 
     public void SetArea(GameObject _walkable, GameObject _notWalkable)

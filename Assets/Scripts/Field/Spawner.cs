@@ -22,11 +22,17 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         if (isAutoSpawn)
+        {
             FieldManager.Instance.spawnAction += Spawn;
+
+            print("spawn event add");
+        }
+
     }
 
     public void Spawn()
     {
+        print(spawnObjectPrefab.name + " is spawn");
         folder = new GameObject(spawnObjectPrefab.name);
 
         if (isObstacle)
