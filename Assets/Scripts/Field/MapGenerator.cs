@@ -23,32 +23,7 @@ public class MapGenerator : MonoBehaviour
     public FastNoise.Interp noiseInterp;
     public Vector3 noiseOffeset;
 
-    GameObject walkable, notWalkable;
-
-    private void OnEnable()
-    {
-        Generate();
-
-        FieldManager.Instance.SpawnAction();
-
-        folder.transform.rotation = Quaternion.Euler(0, 45, 0);
-
-        walkable.AddComponent<NavMeshSurface>();
-        walkable.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
-        walkable.GetComponent<NavMeshSurface>().defaultArea = 0;
-        walkable.GetComponent<NavMeshSurface>().BuildNavMesh();
-
-        notWalkable.AddComponent<NavMeshSurface>();
-        notWalkable.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
-        notWalkable.GetComponent<NavMeshSurface>().defaultArea = 1;
-        notWalkable.GetComponent<NavMeshSurface>().BuildNavMesh();
-
-    }
-
-    private void Start()
-    {
-        FieldManager.Instance.MonsterNavMeshAction();
-    }
+    public GameObject walkable, notWalkable;
 
     public void Generate()
     {
@@ -65,13 +40,10 @@ public class MapGenerator : MonoBehaviour
         walkalbeCubeFolder.transform.parent = walkable.transform;
         notWalkalbeCubeFolder.transform.parent = notWalkable.transform;
 
-
-        FieldManager.Instance.SetArea(walkable, notWalkable);
-
-
         Vector3 startPos = Vector3.zero;
         startPos.x = folder.transform.position.x - mapSize.x * 0.5f * tileSize.x + 0.5f * tileSize.x;
         startPos.z = folder.transform.position.z - mapSize.z * 0.5f * tileSize.z + 0.5f * tileSize.z;
+        startPos.y = -tileSize.y * 0.5f;
 
 
         for (int x = 0; x < mapSize.x; ++x)
@@ -109,6 +81,24 @@ public class MapGenerator : MonoBehaviour
 
     }
 
+
+    public void SetQuater()
+    {
+        folder.transform.rotation = Quaternion.Euler(0, 45, 0);
+    }
+
+    public void BakeNavMesh()
+    {
+        walkable.AddComponent<NavMeshSurface>();
+        walkable.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
+        walkable.GetComponent<NavMeshSurface>().defaultArea = 0;
+        walkable.GetComponent<NavMeshSurface>().BuildNavMesh();
+
+        notWalkable.AddComponent<NavMeshSurface>();
+        notWalkable.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
+        notWalkable.GetComponent<NavMeshSurface>().defaultArea = 1;
+        notWalkable.GetComponent<NavMeshSurface>().BuildNavMesh();
+    }
 
     public void TileListClear()
     {

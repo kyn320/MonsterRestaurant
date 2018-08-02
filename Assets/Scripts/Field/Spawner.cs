@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
                 if (loopCount < 1)
                     print("LoopOut");
 
-                GameObject spawnObject = Instantiate(spawnObjectPrefab, pos, Quaternion.identity);
+                GameObject spawnObject = Instantiate(spawnObjectPrefab, pos, spawnObjectPrefab.transform.localRotation);
                 objectList.Add(spawnObject);
                 spawnObject.transform.parent = folder.transform;
             }

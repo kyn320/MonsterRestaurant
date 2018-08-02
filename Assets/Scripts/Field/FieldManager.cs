@@ -23,6 +23,26 @@ public class FieldManager : Singleton<FieldManager>
 
     public UnityAction spawnAction;
 
+    MapGenerator mapGenerator;
+
+    private void OnEnable()
+    {
+        mapGenerator.Generate();
+
+        SetArea(mapGenerator.walkable, mapGenerator.notWalkable);
+
+        SpawnAction();
+
+        mapGenerator.SetQuater();
+        mapGenerator.BakeNavMesh();
+
+    }
+
+    private void Start()
+    {
+        MonsterNavMeshAction();
+    }
+
     public void MonsterNavMeshAction()
     {
         if (monsterNavMeshAction != null)
@@ -35,7 +55,7 @@ public class FieldManager : Singleton<FieldManager>
         {
             spawnAction.Invoke();
 
-        
+
             print("spawn action");
         }
 

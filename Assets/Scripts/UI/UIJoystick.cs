@@ -15,10 +15,14 @@ public class UIJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
 
     RectTransform stick, canvas;
 
+    [SerializeField]
+    PlayerController player;
+
     void Awake()
     {
         stick = transform.GetChild(0).GetComponent<RectTransform>();
         canvas = transform.root.GetComponent<RectTransform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     public void OnPointerDown(PointerEventData _eventData)
@@ -45,12 +49,14 @@ public class UIJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
             stick.transform.position = orignPos + dir * distance;
         }
 
+        player.SetAxis(dir);
     }
 
     public void OnPointerUp(PointerEventData _eventData)
     {
         stick.transform.position = orignPos;
         dir = Vector3.zero;
+        player.SetAxis(dir);
     }
 
 }
