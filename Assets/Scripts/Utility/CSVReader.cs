@@ -4,8 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-//List<Dictionary<string,object>> data = CSVReader.Read("File name")
-//data[index = int][keyValue = string]
+//  List<Dictionary<string,object>> data = CSVReader.Read("File name")
+//  data[index = int][keyValue = string]
+
 
 public class CSVReader
 {

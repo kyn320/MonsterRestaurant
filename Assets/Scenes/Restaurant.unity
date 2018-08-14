@@ -20504,7 +20504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1275350217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20808,7 +20808,6 @@ MonoBehaviour:
     materialCountList: 01000000010000000100000001000000
     gestureList: []
     itemList: []
-  correctedPuzzleIndex: 
 --- !u!114 &1298139056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22712,7 +22711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1388567263
 RectTransform:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class FieldManager : Singleton<FieldManager>
 
     public UnityAction spawnAction;
 
+    [SerializeField]
     MapGenerator mapGenerator;
 
     private void OnEnable()
