@@ -8,7 +8,6 @@ public class Monster {
     public string name;
     public int id;
     public FieldStatus status;
-    public List<int> dropItemList;
     public GameObject prefab;
 
 }
