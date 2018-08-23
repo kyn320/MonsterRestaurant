@@ -12636,24 +12636,24 @@ MonoBehaviour:
   items:
   - name: Bone
     id: 0
+    icon: {fileID: 21300000, guid: e3d7af7b0dc219e48b72951bddb7acc4, type: 3}
     context: "\uB3D9\uBB3C\uC758 \uBF08\uB2E4."
-    icon: {fileID: 21300000, guid: 54e9e30b483358e4996a93d6da320533, type: 3}
   - name: Meet
     id: 1
+    icon: {fileID: 21300000, guid: 5dd925dd70778eb46bd5b82c7c6f501a, type: 3}
     context: "\uACE0\uAE30\uC774\uB2E4."
-    icon: {fileID: 21300000, guid: 4b6107ad4fb13814083b77f7ab508584, type: 3}
   - name: Mushroom
     id: 2
+    icon: {fileID: 21300000, guid: 85a6d3a070d92524dbc7aa5181543ee4, type: 3}
     context: "\uBC84\uC12F\uC774\uB2E4."
-    icon: {fileID: 21300000, guid: 2172e7b5f0a5cbe4499d9e8970459375, type: 3}
-  - name: Slime
+  - name: Slime Bell
     id: 3
+    icon: {fileID: 21300000, guid: 21839581408ff014c990a47decd85b67, type: 3}
     context: "\uC2AC\uB77C\uC784 \uC561\uCCB4\uC774\uB2E4."
-    icon: {fileID: 21300000, guid: f023e2d4948e866469c4df169d138789, type: 3}
-  - name: Check
+  - name: Slime Jelly
     id: 4
-    context: "\uC2AC\uB77C\uC784 \uC561\uCCB4\uC774\uB2E4."
-    icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: cbeaf99ba20d79f4e84eb77d7443d527, type: 3}
+    context: "\uC2AC\uB77C\uC784 \uC561\uCCB4\uB97C \uC824\uB9AC\uD654 \uD55C\uAC83\uC774\uB2E4."
 --- !u!4 &819173201
 Transform:
   m_ObjectHideFlags: 0
@@ -20801,9 +20801,9 @@ MonoBehaviour:
   recipe:
     name: "\uC2AC\uB77C\uC784\uD0D5"
     id: 0
+    icon: {fileID: 21300000, guid: ebd3df23bbfc29048a3e41ceeff95b56, type: 3}
     context: "\uC2AC\uB77C\uC784 \uC561\uCCB4\uB97C \uBA54\uC778\uC73C\uB85C \uD55C
       \uD0D5 \uC694\uB9AC\uC774\uB2E4."
-    icon: {fileID: 21300000, guid: ebd3df23bbfc29048a3e41ceeff95b56, type: 3}
     materialIDList: 00000000010000000200000003000000
     materialCountList: 01000000010000000100000001000000
     gestureList: []

@@ -6,8 +6,8 @@ using UnityEngine;
 public class Item  {
     public string name;
     public int id = -1;
+    public Sprite icon;
     [TextArea]
     public string context;
-    public Sprite icon;
 
 }

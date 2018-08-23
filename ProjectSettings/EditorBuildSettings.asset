@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Splash.unity
+    guid: aa31fbe27f2540145b4af10d1279ae48
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 0e851ddc571f9b844bac277652fdc760
+  - enabled: 1
+    path: Assets/Scenes/WorldMap.unity
+    guid: 579e6c02f72b2674aad29293bd902fef
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: 248e4c26793672d419ee6ae79cd35eaa
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: f7258ac924c85584aabf090ae0f51d36
+  - enabled: 1
+    path: Assets/Scenes/Restaurant.unity
+    guid: 7f2a58de97be7ca47b13040945093433
+  - enabled: 1
+    path: Assets/Scenes/MapGenerator.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

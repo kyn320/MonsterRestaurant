@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    PlayerBehaviour playerBehaviour;
     Rigidbody ri;
 
+    [SerializeField]
     float h, v;
 
     public float jumpPower;
+    public float rotationSpeed;
     public float moveSpeed;
 
+    public bool isInput = false;
     public bool isBattle = false;
 
     PlayerActionChecker actionChecker;
@@ -23,28 +26,34 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         ri = GetComponent<Rigidbody>();
+        playerBehaviour = GetComponent<PlayerBehaviour>();
         actionChecker = transform.GetComponentInChildren<PlayerActionChecker>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
-        */
+        if (isInput)
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+        }
+        
 
-        if (Mathf.Abs(h) > 0.5f || Mathf.Abs(v) > 0.5f)
+        if (Mathf.Abs(h) > 0.2f || Mathf.Abs(v) > 0.2f)
+        {
             dir = new Vector3(h, dir.y, v);
+        }
 
-        transform.rotation = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(dir),Time.deltaTime * rotationSpeed);
 
         ri.velocity = new Vector3(h * moveSpeed, ri.velocity.y, v * moveSpeed);
+        playerBehaviour.ani.SetFloat("Move", ri.velocity.sqrMagnitude);
 
         if (Input.GetKeyDown(KeyCode.Space))
             ri.velocity = new Vector3(ri.velocity.x, jumpPower, ri.velocity.z);
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (isInput && Input.GetKeyDown(KeyCode.Z))
         {
             //action
             Action();

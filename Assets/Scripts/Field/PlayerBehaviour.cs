@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    [HideInInspector]
+    public Animator ani;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject rendererObject;
+
+    private void Awake()
+    {
+        ani = rendererObject.GetComponent<Animator>();
+    }
+
+
 }
