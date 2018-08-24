@@ -1,22 +1,14 @@
 fileFormatVersion: 2
-guid: e34a1db72e32fd54c82df710383b1540
+guid: 3c594eb7bd2191248a1424b9f30e7db0
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane006
-    100004: "\xA1\xA1\xD7\xFD\xD7\xFB"
-    100006: "\xD7\xFE\xD7\xFC"
     400000: //RootNode
-    400002: Plane006
-    400004: "\xA1\xA1\xD7\xFD\xD7\xFB"
-    400006: "\xD7\xFE\xD7\xFC"
-    2100000: 20 - Default
-    2300000: Plane006
-    3300000: Plane006
-    4300000: Plane006
-    7400000: Take 001
-    9500000: //RootNode
+    2100000: 'Material #173733'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -48,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.35
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -92,7 +84,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

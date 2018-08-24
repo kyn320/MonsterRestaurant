@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: ac4059356f8d42d4085503a5f1c393b1
+guid: 4a3079bad7876a44989975713453b885
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 'Material #132428'
+    2100000: 'Material #173733'
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder001
-    7400000: Take 001
-    9500000: //RootNode
+    4300000: Object012
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.35
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -86,7 +84,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
