@@ -14,6 +14,7 @@ public class MapGenerator : MonoBehaviour
     public int waterDeep = -1;
 
     public List<GameObject> tileList;
+    public int maxHeight = 3;
 
     public GameObject folder;
 
@@ -66,8 +67,14 @@ public class MapGenerator : MonoBehaviour
                 GameObject g;
                 if (yPos > waterDeep)
                 {
+                    int tileHeight = (int)(yPos - waterDeep);
+                    if (tileHeight > maxHeight)
+                    {
+                        tileHeight = maxHeight;
+                    }
                     g = Instantiate(tileList[0], walkable.transform);
                     g.transform.parent = walkalbeCubeFolder.transform;
+                    g.GetComponent<TileBlock>().SetTexture("Grass", tileHeight);
                 }
                 else
                 {
