@@ -88,6 +88,11 @@ public class MapGenerator : MonoBehaviour
                 }
                 else
                 {
+                    g = Instantiate(tileList[2], notWalkable.transform);
+                    g.transform.parent = notWalkalbeCubeFolder.transform;
+
+                    g.transform.position = startPos + Vector3.right * x * tileSize.x + Vector3.forward * z * tileSize.z + Vector3.up * (y - tileSize.y + yOffset);
+
                     g = Instantiate(tileList[1], notWalkable.transform);
                     g.transform.parent = notWalkalbeCubeFolder.transform;
                 }

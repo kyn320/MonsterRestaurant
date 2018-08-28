@@ -1152,7 +1152,7 @@ Prefab:
     - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
         type: 2}
       propertyPath: tileList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4900967587438698, guid: 88ce0858bac38564f82061ad8c80a800, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1205,7 +1205,7 @@ Prefab:
         type: 2}
       propertyPath: tileList.Array.data[2]
       value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
+      objectReference: {fileID: 1303284482716280, guid: d75e9066c9e8eb940b294b24198d33c0,
         type: 2}
     - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
         type: 2}
