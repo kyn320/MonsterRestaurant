@@ -11,18 +11,45 @@ public class CookPuzzleManager : MonoBehaviour
 
     public Vector2Int puzzleSize;
 
-    public Recipe recipe;
+    public RecipeData recipe;
 
     CookPuzzle[,] cookPuzzles;
 
     List<int> correctedItemID = new List<int>();
 
+    public List<int> materialIDList;
+
+    [SerializeField]
+    UIRestaurant uIRestaurant;
+
     private void Start()
     {
-        recipe.SetItemList();
+        recipe = RecipeDB.Instance.FindItem(150);
+
+        SetItemList();
         CreatePuzzleSlot();
         SetRecipePuzzle();
         SetRandomEmptyPuzzle();
+
+        uIRestaurant.combinationView.CreateCombination(materialIDList);
+    }
+
+    public void SetItemList()
+    {
+        string[] combination = recipe.Combination.Split('|');
+
+        for (int i = 0; i < combination.Length; ++i)
+        {
+            string[] data = combination[i].Split('/');
+
+            int id = int.Parse(data[0]);
+            int value = int.Parse(data[1]);
+
+            for (int j = 0; j < value; ++j)
+            {
+                materialIDList.Add(id);
+            }
+        }
     }
 
     public void CreatePuzzleSlot()
@@ -48,32 +75,29 @@ public class CookPuzzleManager : MonoBehaviour
     {
         List<Vector2Int> isUseVec2 = new List<Vector2Int>();
         Vector2Int startPos = new Vector2Int(Random.Range(0, puzzleSize.x), Random.Range(0, puzzleSize.y));
-        for (int i = 0; i < recipe.itemList.Count; ++i)
+        for (int i = 0; i < materialIDList.Count; ++i)
         {
-            for (int j = 0; j < recipe.materialCountList[i]; ++j)
+            Vector2Int randPos;
+
+            //랜덤 위치를 얻음
+            while (true)
             {
-                Vector2Int randPos;
+                int randX = Random.Range(-1, 2);
+                int randY = Random.Range(-1, 2);
+                randPos = new Vector2Int(startPos.x + randX, startPos.y + randY);
 
-                //랜덤 위치를 얻음
-                while (true)
+                randPos.x = Mathf.Clamp(randPos.x, 0, puzzleSize.x - 1);
+                randPos.y = Mathf.Clamp(randPos.y, 0, puzzleSize.y - 1);
+
+                if (!isUseVec2.Contains(randPos))
                 {
-                    int randX = Random.Range(-1, 2);
-                    int randY = Random.Range(-1, 2);
-                    randPos = new Vector2Int(startPos.x + randX, startPos.y + randY);
-
-                    randPos.x = Mathf.Clamp(randPos.x, 0, puzzleSize.x - 1);
-                    randPos.y = Mathf.Clamp(randPos.y, 0, puzzleSize.y - 1);
-
-                    if (!isUseVec2.Contains(randPos))
-                    {
-                        isUseVec2.Add(randPos);
-                        break;
-                    }
+                    isUseVec2.Add(randPos);
+                    break;
                 }
-                correctedItemID.Add(recipe.itemList[i].id);
-                cookPuzzles[randPos.x, randPos.y].SetItem(recipe.itemList[i]);
-                startPos = randPos;
             }
+            correctedItemID.Add(materialIDList[i]);
+            cookPuzzles[randPos.x, randPos.y].SetItem(ItemDB.Instance.FindItem(materialIDList[i]));
+            startPos = randPos;
         }
     }
 
@@ -94,13 +118,30 @@ public class CookPuzzleManager : MonoBehaviour
         }
     }
 
+    public bool CheckCorrectedPuzzleSlot(int _index, CookPuzzle _puzzle)
+    {
+        if (correctedItemID[_index] == _puzzle.item.ID)
+        {
+            uIRestaurant.combinationView.UpdateIndex();
+            return true;
+        }
+        else
+        {
+            uIRestaurant.combinationView.ResetIndex();
+            return false;
+        }
+    }
+
     public bool CheckCorrectedPuzzle(List<CookPuzzle> _list)
     {
+        if (_list.Count != correctedItemID.Count)
+            return false;
+
         int correct = 0;
 
         for (int i = 0; i < correctedItemID.Count; ++i)
         {
-            if (_list[i].item.id == correctedItemID[i])
+            if (_list[i].item.ID == correctedItemID[i])
             {
                 ++correct;
             }

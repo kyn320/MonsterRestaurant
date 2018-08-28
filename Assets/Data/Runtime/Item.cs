@@ -10,48 +10,50 @@ using System.Collections.Generic;
 /// can be serialized onto an asset data file.
 /// 
 [System.Serializable]
-public class $ClassName : ScriptableObject 
+public class Item : ScriptableObject
 {
-    [HideInInspector] [SerializeField] 
+    [HideInInspector]
+    [SerializeField]
     public string SheetName = "";
-    
-    [HideInInspector] [SerializeField] 
+
+    [HideInInspector]
+    [SerializeField]
     public string WorksheetName = "";
-   
-   [SerializeField]
-	public string FilePath = "";
+
+    [SerializeField]
+    public string FilePath = "";
 
     // Note: initialize in OnEnable() not here.
-    public $DataClassName[] dataArray;
-    
+    public ItemData[] dataArray;
+
     void OnEnable()
     {
-//#if UNITY_EDITOR
+        //#if UNITY_EDITOR
         //hideFlags = HideFlags.DontSave;
-//#endif
+        //#endif
         // Important:
         //    It should be checked an initialization of any collection data before it is initialized.
         //    Without this check, the array collection which already has its data get to be null 
         //    because OnEnable is called whenever Unity builds.
         // 
         if (dataArray == null)
-            dataArray = new $DataClassName[0];
+            dataArray = new ItemData[0];
     }
-    
+
     //
     // Write a proper query methods for retrieving data.
     //
-    //public $DataClassName FindByKey(string key)
+    //public ItemData FindByKey(string key)
     //{
     //    return Array.Find(dataArray, d => d.Key == key);
     //}
 
-	public $DataClassName FindItemID(int id)
+    public ItemData FindItemID(int id)
     {
         return Array.Find(dataArray, d => d.ID == id);
     }
 
-    public $DataClassName GetRandomItem()
+    public ItemData GetRandomItem()
     {
         return dataArray[UnityEngine.Random.Range(0, dataArray.Length)];
     }

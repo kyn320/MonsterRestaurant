@@ -10,7 +10,7 @@ using System.Collections.Generic;
 /// can be serialized onto an asset data file.
 /// 
 [System.Serializable]
-public class $ClassName : ScriptableObject 
+public class Monster : ScriptableObject 
 {
     [HideInInspector] [SerializeField] 
     public string SheetName = "";
@@ -18,11 +18,8 @@ public class $ClassName : ScriptableObject
     [HideInInspector] [SerializeField] 
     public string WorksheetName = "";
    
-   [SerializeField]
-	public string FilePath = "";
-
     // Note: initialize in OnEnable() not here.
-    public $DataClassName[] dataArray;
+    public MonsterData[] dataArray;
     
     void OnEnable()
     {
@@ -35,25 +32,14 @@ public class $ClassName : ScriptableObject
         //    because OnEnable is called whenever Unity builds.
         // 
         if (dataArray == null)
-            dataArray = new $DataClassName[0];
+            dataArray = new MonsterData[0];
     }
     
     //
     // Write a proper query methods for retrieving data.
     //
-    //public $DataClassName FindByKey(string key)
+    //public MonsterData FindByKey(string key)
     //{
     //    return Array.Find(dataArray, d => d.Key == key);
     //}
-
-	public $DataClassName FindItemID(int id)
-    {
-        return Array.Find(dataArray, d => d.ID == id);
-    }
-
-    public $DataClassName GetRandomItem()
-    {
-        return dataArray[UnityEngine.Random.Range(0, dataArray.Length)];
-    }
-
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDB : Singleton<ItemDB>
+public class RecipeDB : Singleton<RecipeDB>
 {
     readonly string dataPath = "Data/";
 
-    public Item items;
+    public Recipe items;
 
     private void Awake()
     {
@@ -16,15 +16,15 @@ public class ItemDB : Singleton<ItemDB>
 
     void LoadItemDB()
     {
-        items = Resources.Load<Item>(dataPath + "Item");
+        items = Resources.Load<Recipe>(dataPath + "Recipe");
     }
 
-    public ItemData FindItem(int _id)
+    public RecipeData FindItem(int _id)
     {
         return items.FindItemID(_id);
     }
 
-    public ItemData GetRandomItem()
+    public RecipeData GetRandomItem()
     {
         return items.GetRandomItem();
     }

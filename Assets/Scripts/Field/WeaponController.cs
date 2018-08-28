@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
 
-    public EquipItem item;
+    //public EquipItem item;
 
     public bool isAttack = false;
 

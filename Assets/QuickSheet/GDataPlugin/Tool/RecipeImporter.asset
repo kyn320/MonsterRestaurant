@@ -15,7 +15,7 @@ MonoBehaviour:
   scriptFilePath: Data/Runtime
   editorScriptFilePath: Data/Editor
   sheetName: "\uBAAC\uC2A4\uD130 \uB808\uC2A4\uD1A0\uB791"
-  workSheetName: DB_Item_Recipe
+  workSheetName: Recipe
   columnHeaderList:
   - type: 1
     name: Name
@@ -37,7 +37,7 @@ MonoBehaviour:
     name: Combination
     isEnable: 0
     isArray: 0
-  - type: 4
+  - type: 3
     name: Price
     isEnable: 0
     isArray: 0

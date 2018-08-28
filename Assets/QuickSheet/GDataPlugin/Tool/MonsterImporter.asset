@@ -15,7 +15,7 @@ MonoBehaviour:
   scriptFilePath: Data/Runtime
   editorScriptFilePath: Data/Editor
   sheetName: "\uBAAC\uC2A4\uD130 \uB808\uC2A4\uD1A0\uB791"
-  workSheetName: DB_Monster
+  workSheetName: Monster
   columnHeaderList:
   - type: 1
     name: Name

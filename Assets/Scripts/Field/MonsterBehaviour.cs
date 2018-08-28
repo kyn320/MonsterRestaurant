@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class MonsterBehaviour : MonoBehaviour
 {
     [SerializeField]
-    Monster monster;
+    MonsterData monster;
 
     float hp = 0;
 
@@ -25,7 +25,7 @@ public class MonsterBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         ri = GetComponent<Rigidbody>();
         FieldManager.Instance.monsterNavMeshAction += Move;
-        hp = monster.status.HP;
+        hp = monster.Hp;
     }
 
     public void Move()

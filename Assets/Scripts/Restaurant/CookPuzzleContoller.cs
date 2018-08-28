@@ -35,7 +35,9 @@ public class CookPuzzleContoller : MonoBehaviour
                 print("is correct");
             }
             else
+            {
                 print("not correct");
+            }
 
             ResetPuzzle();
         }
@@ -59,7 +61,7 @@ public class CookPuzzleContoller : MonoBehaviour
             {
                 puzzle.SetSelect(true);
                 selectPuzzles.Add(puzzle);
-
+                manager.CheckCorrectedPuzzleSlot(selectPuzzles.Count - 1, puzzle);
                 ++lineRenderer.positionCount;
                 lineRenderer.SetPosition(selectPuzzles.Count - 1, puzzle.transform.position);
                 oldPuzzle = puzzle;
