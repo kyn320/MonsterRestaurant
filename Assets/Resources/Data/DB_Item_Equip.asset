@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8341a6e123c0f24aaa35bf6b6bd81aa, type: 3}
+  m_Name: DB_Item_Equip
+  m_EditorClassIdentifier: 
+  SheetName: "\uBAAC\uC2A4\uD130 \uB808\uC2A4\uD1A0\uB791"
+  WorksheetName: DB_Item_Equip
+  FilePath: Sprites/Icon
+  dataArray:
+  - name: "\uD3C9\uBC94\uD55C \uAC11\uC637"
+    id: 100
+    context: "\uBAB8\uC744 \uBCF4\uD638\uD558\uAE30 \uC704\uD574 \uAD6C\uD55C \uAC12\uC2FC
+      \uAC11\uC637"
+    icon: {fileID: 0}
+    atk: 0
+    def: 3
+    addslot: 0
+    battlesp: 0
+    gathersp: 0
+  - name: "\uD3C9\uBC94\uD55C \uB2E8\uAC80"
+    id: 101
+    context: "\uC0AC\uB0E5\uC744 \uC704\uD574 \uC900\uBE44\uD55C \uAC12\uC2FC \uB2E8\uAC80"
+    icon: {fileID: 0}
+    atk: 10
+    def: 0
+    addslot: 0
+    battlesp: 0
+    gathersp: 0
+  - name: "\uD3C9\uBC94\uD55C \uAC00\uBC29"
+    id: 102
+    context: "\uC2DD\uC7AC\uB8CC \uC800\uC7A5\uC744 \uC704\uD55C \uC791\uC740 \uAC00\uBC29"
+    icon: {fileID: 0}
+    atk: 0
+    def: 0
+    addslot: 20
+    battlesp: 0
+    gathersp: 0
+  - name: "\uD3C9\uBC94\uD55C \uC2E0\uBC1C"
+    id: 103
+    context: "\uBC1C\uC744 \uBCF4\uD638\uD558\uAE30 \uC704\uD55C \uC2E0\uBC1C"
+    icon: {fileID: 0}
+    atk: 0
+    def: 2
+    addslot: 0
+    battlesp: 0
+    gathersp: 0
+  - name: "\uD3C9\uBC94\uD55C \uC7A5\uAC11"
+    id: 104
+    context: "\uC190\uC744 \uBCF4\uD638\uD558\uAE30 \uC704\uD55C \uC7A5\uAC11"
+    icon: {fileID: 0}
+    atk: 0
+    def: 2
+    addslot: 0
+    battlesp: 0
+    gathersp: 0
+  - name: "\uAC15\uCCA0 \uAC11\uC637"
+    id: 105
+    context: "\uAC15\uD55C \uCDA9\uACA9\uB3C4 \uD761\uC218\uD574\uC8FC\uB294 \uB2E8\uB2E8\uD55C
+      \uAC11\uC637"
+    icon: {fileID: 0}
+    atk: 0
+    def: 10
+    addslot: 0
+    battlesp: 0
+    gathersp: 0
+  - name: "\uC798 \uC5F0\uB9C8\uB41C \uC7A5\uAC80"
+    id: 106
+    context: "\uBABB \uBCA8\uAC83\uC774 \uC5C6\uB294 \uB0A0\uCE74\uB85C\uC6B4 \uC7A5\uAC80"
+    icon: {fileID: 0}
+    atk: 30
+    def: 0
+    addslot: 0
+    battlesp: 0
+    gathersp: 0
+  - name: "\uD070 \uAC00\uBC29"
+    id: 107
+    context: "\uB9CE\uC740 \uC591\uC758 \uC2DD\uC7AC\uB8CC\uB97C \uC800\uC7A5\uD558\uAE30
+      \uC704\uD55C \uD070 \uAC00\uBC29"
+    icon: {fileID: 0}
+    atk: 0
+    def: 0
+    addslot: 30
+    battlesp: 0
+    gathersp: 0
+  - name: "\uC0AC\uB0E5\uAFBC\uC758 \uC2E0\uBC1C"
+    id: 108
+    context: "\uBAAC\uC2A4\uD130 \uC0AC\uB0E5\uC5D0 \uC801\uD569\uD55C \uD2BC\uD2BC\uD558\uACE0
+      \uD3B8\uD55C \uC2E0\uBC1C"
+    icon: {fileID: 0}
+    atk: 0
+    def: 5
+    addslot: 0
+    battlesp: 1
+    gathersp: 0
+  - name: "\uCC44\uC9D1\uAFBC\uC758 \uC7A5\uAC11"
+    id: 109
+    context: "\uC2DD\uBB3C \uCC44\uC9D1\uC5D0 \uC801\uD569\uD55C \uD2BC\uD2BC\uD55C
+      \uC7A5\uAC11"
+    icon: {fileID: 0}
+    atk: 0
+    def: 5
+    addslot: 0
+    battlesp: 0
+    gathersp: 1

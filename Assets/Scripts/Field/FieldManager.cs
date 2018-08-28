@@ -28,6 +28,7 @@ public class FieldManager : Singleton<FieldManager>
 
     private void OnEnable()
     {
+        mapGenerator.SetMapCategory(ConvertFieldCategoryToString(category));
         mapGenerator.Generate();
 
         SetArea(mapGenerator.walkable, mapGenerator.notWalkable);
@@ -76,6 +77,25 @@ public class FieldManager : Singleton<FieldManager>
     public GameObject GetNotWalkable()
     {
         return notWalkable;
+    }
+
+    public static string ConvertFieldCategoryToString(FieldCategory _fieldCategory)
+    {
+
+        switch (_fieldCategory)
+        {
+            case FieldCategory.Grass:
+                return "Grass";
+            case FieldCategory.Desert:
+                return "Desert";
+            case FieldCategory.Jungle:
+                return "Jungle";
+            case FieldCategory.Mine:
+                return "Mine";
+            default:
+                return "";
+        }
+
     }
 
 }

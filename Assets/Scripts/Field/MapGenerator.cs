@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
+    public string mapCategory;
 
     public Vector3 mapSize;
     public Vector3 tileSize;
@@ -25,6 +26,15 @@ public class MapGenerator : MonoBehaviour
     public Vector3 noiseOffeset;
 
     public GameObject walkable, notWalkable;
+
+    [SerializeField]
+    bool isEditor;
+
+    private void Awake()
+    {
+        if (isEditor)
+            Generate();
+    }
 
     public void Generate()
     {
@@ -74,7 +84,7 @@ public class MapGenerator : MonoBehaviour
                     }
                     g = Instantiate(tileList[0], walkable.transform);
                     g.transform.parent = walkalbeCubeFolder.transform;
-                    g.GetComponent<TileBlock>().SetTexture("Grass", tileHeight);
+                    g.GetComponent<TileBlock>().SetTexture(mapCategory, tileHeight);
                 }
                 else
                 {
@@ -110,6 +120,11 @@ public class MapGenerator : MonoBehaviour
     public void TileListClear()
     {
         DestroyImmediate(folder);
+    }
+
+    public void SetMapCategory(string _category)
+    {
+        mapCategory = _category;
     }
 
 }

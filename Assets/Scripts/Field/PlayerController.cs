@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public float moveSpeed;
 
+    public int attackCombo;
+
     public bool isInput = false;
     public bool isBattle = false;
 
@@ -38,14 +40,14 @@ public class PlayerController : MonoBehaviour
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
         }
-        
+
 
         if (Mathf.Abs(h) > 0.2f || Mathf.Abs(v) > 0.2f)
         {
             dir = new Vector3(h, dir.y, v);
         }
 
-        transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.LookRotation(dir),Time.deltaTime * rotationSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotationSpeed);
 
         ri.velocity = new Vector3(h * moveSpeed, ri.velocity.y, v * moveSpeed);
         playerBehaviour.ani.SetFloat("Move", ri.velocity.sqrMagnitude);
@@ -64,12 +66,20 @@ public class PlayerController : MonoBehaviour
     {
         if (isBattle)
         {
+            ++attackCombo;
+
+            if (attackCombo == 3)
+                attackCombo = 1;
+
+            playerBehaviour.ani.SetInteger("AttackCombo", attackCombo);
+            playerBehaviour.ani.SetTrigger("Attack");
 
         }
         else
         {
             if (actionChecker.IsAround())
             {
+                playerBehaviour.ani.SetBool("Search", true);
                 print(actionChecker.NearObject());
             }
         }

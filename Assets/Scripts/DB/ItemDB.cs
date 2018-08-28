@@ -6,6 +6,11 @@ public class ItemDB : Singleton<ItemDB>
 {
     public List<Item> items;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public Item FindItem(int _id)
     {
         return items.Find(item => item.id == _id);
