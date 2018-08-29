@@ -1149,11 +1149,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4900967587438698, guid: 88ce0858bac38564f82061ad8c80a800, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1186,74 +1181,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: folder
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: walkable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: notWalkable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[2]
-      value: 
-      objectReference: {fileID: 1303284482716280, guid: d75e9066c9e8eb940b294b24198d33c0,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[3]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[4]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[5]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[6]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[7]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[8]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: tileList.Array.data[9]
-      value: 
-      objectReference: {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb,
-        type: 2}
-    - target: {fileID: 114400710836579872, guid: 88ce0858bac38564f82061ad8c80a800,
-        type: 2}
-      propertyPath: maxHeight
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88ce0858bac38564f82061ad8c80a800, type: 2}
   m_IsPrefabParent: 0
@@ -1276,30 +1203,21 @@ MonoBehaviour:
   monster:
     name: 
     id: 0
-    status:
-      HP: 0
-      MP: 0
-      SP: 0
-      Level: 0
-      EXP: 0
-      MinAtk: 0
-      MaxAtk: 0
-      Def: 0
-      Dodge: 0
-      Critical: 0
-      MoveSpeed: 0
-      Sight: 0
-      AttackType: 0
-      IsFirstAttack: 0
-      GatheringTime: 0
-      dropPercentList: []
-      dropItemList: 
-      MinItemDrop: 0
-      MaxItemDrop: 0
-      MinGoldDrop: 0
-      MaxGoldDrop: 0
-      CapturePercent: 0
-    prefab: {fileID: 0}
+    minatk: 0
+    maxatk: 0
+    speed: 0
+    hp: 0
+    def: 0
+    exp: 0
+    droppercent: 
+    dropitemid: 
+    mindrop: 0
+    maxdrop: 0
+    mingold: 0
+    maxgold: 0
+    isfrist: 0
+    sight: 0
+    attacktype: 0
   moveSpeed: 5
   stopDistance: 2
   target: {fileID: 2004379129}
@@ -2020,30 +1938,21 @@ MonoBehaviour:
   monster:
     name: 
     id: 0
-    status:
-      HP: 0
-      MP: 0
-      SP: 0
-      Level: 0
-      EXP: 0
-      MinAtk: 0
-      MaxAtk: 0
-      Def: 0
-      Dodge: 0
-      Critical: 0
-      MoveSpeed: 0
-      Sight: 0
-      AttackType: 0
-      IsFirstAttack: 0
-      GatheringTime: 0
-      dropPercentList: []
-      dropItemList: 
-      MinItemDrop: 0
-      MaxItemDrop: 0
-      MinGoldDrop: 0
-      MaxGoldDrop: 0
-      CapturePercent: 0
-    prefab: {fileID: 0}
+    minatk: 0
+    maxatk: 0
+    speed: 0
+    hp: 0
+    def: 0
+    exp: 0
+    droppercent: 
+    dropitemid: 
+    mindrop: 0
+    maxdrop: 0
+    mingold: 0
+    maxgold: 0
+    isfrist: 0
+    sight: 0
+    attacktype: 0
   moveSpeed: 5
   stopDistance: 2
   target: {fileID: 2004379129}
@@ -2496,30 +2405,21 @@ MonoBehaviour:
   monster:
     name: 
     id: 0
-    status:
-      HP: 0
-      MP: 0
-      SP: 0
-      Level: 0
-      EXP: 0
-      MinAtk: 0
-      MaxAtk: 0
-      Def: 0
-      Dodge: 0
-      Critical: 0
-      MoveSpeed: 0
-      Sight: 0
-      AttackType: 0
-      IsFirstAttack: 0
-      GatheringTime: 0
-      dropPercentList: []
-      dropItemList: 
-      MinItemDrop: 0
-      MaxItemDrop: 0
-      MinGoldDrop: 0
-      MaxGoldDrop: 0
-      CapturePercent: 0
-    prefab: {fileID: 0}
+    minatk: 0
+    maxatk: 0
+    speed: 0
+    hp: 0
+    def: 0
+    exp: 0
+    droppercent: 
+    dropitemid: 
+    mindrop: 0
+    maxdrop: 0
+    mingold: 0
+    maxgold: 0
+    isfrist: 0
+    sight: 0
+    attacktype: 0
   moveSpeed: 5
   stopDistance: 2
   target: {fileID: 2004379129}
@@ -2938,30 +2838,21 @@ MonoBehaviour:
   monster:
     name: 
     id: 0
-    status:
-      HP: 0
-      MP: 0
-      SP: 0
-      Level: 0
-      EXP: 0
-      MinAtk: 0
-      MaxAtk: 0
-      Def: 0
-      Dodge: 0
-      Critical: 0
-      MoveSpeed: 0
-      Sight: 0
-      AttackType: 0
-      IsFirstAttack: 0
-      GatheringTime: 0
-      dropPercentList: []
-      dropItemList: 
-      MinItemDrop: 0
-      MaxItemDrop: 0
-      MinGoldDrop: 0
-      MaxGoldDrop: 0
-      CapturePercent: 0
-    prefab: {fileID: 0}
+    minatk: 0
+    maxatk: 0
+    speed: 0
+    hp: 0
+    def: 0
+    exp: 0
+    droppercent: 
+    dropitemid: 
+    mindrop: 0
+    maxdrop: 0
+    mingold: 0
+    maxgold: 0
+    isfrist: 0
+    sight: 0
+    attacktype: 0
   moveSpeed: 5
   stopDistance: 2
   target: {fileID: 2004379129}

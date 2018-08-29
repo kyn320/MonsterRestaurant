@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42b5f1a5381db41a0426d734c6e834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapCategory: 
   mapSize: {x: 100, y: 1, z: 100}
   tileSize: {x: 2, y: 2, z: 2}
   yOffset: 0.15
@@ -58,6 +59,8 @@ MonoBehaviour:
   tileList:
   - {fileID: 1303284482716280, guid: b561e68c7fb2891439128d28133b05f6, type: 2}
   - {fileID: 1789383209527632, guid: dbc87ed59c2d3b94f8d12ab1ec7b28fb, type: 2}
+  - {fileID: 1303284482716280, guid: d75e9066c9e8eb940b294b24198d33c0, type: 2}
+  maxHeight: 7
   folder: {fileID: 0}
   amp: 5000
   freq: 0.05
@@ -66,3 +69,4 @@ MonoBehaviour:
   noiseOffeset: {x: 0, y: 0, z: 0}
   walkable: {fileID: 0}
   notWalkable: {fileID: 0}
+  isEditor: 0

@@ -78,7 +78,7 @@ public class CookPuzzleManager : MonoBehaviour
         for (int i = 0; i < materialIDList.Count; ++i)
         {
             Vector2Int randPos;
-
+            int loopCount = 0;
             //랜덤 위치를 얻음
             while (true)
             {
@@ -92,6 +92,12 @@ public class CookPuzzleManager : MonoBehaviour
                 if (!isUseVec2.Contains(randPos))
                 {
                     isUseVec2.Add(randPos);
+                    break;
+                }
+                ++loopCount;
+                if (loopCount > 100)
+                {
+                    Debug.LogError("퍼즐의 위치를 결정할 수 없습니다.");
                     break;
                 }
             }
@@ -110,12 +116,14 @@ public class CookPuzzleManager : MonoBehaviour
                 if (cookPuzzles[x, y].GetItem() == null)
                 {
                     cookPuzzles[x, y].SetRandomItem();
-                    print("is null >> set random Item");
                 }
-                else
-                    print("not null");
             }
         }
+    }
+
+    public void ResetCombination()
+    {
+        uIRestaurant.combinationView.ResetIndex();
     }
 
     public bool CheckCorrectedPuzzleSlot(int _index, CookPuzzle _puzzle)

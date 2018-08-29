@@ -78,6 +78,7 @@ public class CookPuzzleContoller : MonoBehaviour
         oldPuzzle = null;
         selectPuzzles.Clear();
         lineRenderer.positionCount = 0;
+        manager.ResetCombination();
     }
 
 }

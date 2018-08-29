@@ -15,9 +15,11 @@ public class UICombinationView : MonoBehaviour
 
     public int index;
 
+    public float scrollTime = 1.5f;
+
     [SerializeField]
     Vector2 startPos;
-    
+
     [SerializeField]
     Vector2 slotSize;
 
@@ -34,7 +36,7 @@ public class UICombinationView : MonoBehaviour
             slotList[i].SetIcon(ItemDB.Instance.FindItem(idList[i]).Icon);
         }
 
-        UpdateIndex();
+        ResetIndex();
     }
     // 600 >> 480 == 120
 
@@ -48,8 +50,9 @@ public class UICombinationView : MonoBehaviour
         updateView = StartCoroutine(UpdateView());
     }
 
-    public void ResetIndex() {
-        index = -1;
+    public void ResetIndex()
+    {
+        index = 0;
 
         if (updateView != null)
             StopCoroutine(updateView);
@@ -61,18 +64,21 @@ public class UICombinationView : MonoBehaviour
 
     IEnumerator UpdateView()
     {
-        while (true)
-        {
-            contentTransform.anchoredPosition = Vector2.Lerp(contentTransform.anchoredPosition, startPos + Vector2.left * slotSize.x * index, Time.deltaTime);
+        Vector2 pos = startPos + Vector2.left * slotSize.x * index;
 
-            if ((contentTransform.anchoredPosition - (startPos + Vector2.left * slotSize.x * index)).normalized.x < 0.3f)
-            {
-                break;
-            }
+        float currentScrollTime = 0f;
+
+        while (currentScrollTime < scrollTime)
+        {
+            contentTransform.anchoredPosition = Vector2.Lerp(contentTransform.anchoredPosition, pos, currentScrollTime);
+
+            currentScrollTime += Time.deltaTime;
+
             yield return null;
         }
 
-        contentTransform.anchoredPosition = startPos + Vector2.left * slotSize.x * index;
+        contentTransform.anchoredPosition = pos;
+
         updateView = null;
     }
 

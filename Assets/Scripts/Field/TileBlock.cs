@@ -36,9 +36,18 @@ public class TileBlock : MonoBehaviour
                 break;
 
         }
-        Material material = Resources.Load<Material>("Material/Tile/" + _fieldName + "/" + _fieldName + "_" + _height);
-        meshRenderer.material = material;
+
+
+        Material material = null;
+
+#if UNITY_EDITOR
+        material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Resources/Material/Tile/" + _fieldName + "/" + _fieldName + "_" + _height + ".mat");
+#else
+        material = Resources.Load<Material>("Material/Tile/" + _fieldName + "/" + _fieldName + "_" + _height);
+#endif
+
+        GetComponent<MeshRenderer>().material = material;
 
     }
-    
+
 }

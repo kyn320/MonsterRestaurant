@@ -26,16 +26,7 @@ public class MapGenerator : MonoBehaviour
     public Vector3 noiseOffeset;
 
     public GameObject walkable, notWalkable;
-
-    [SerializeField]
-    bool isEditor;
-
-    private void Awake()
-    {
-        if (isEditor)
-            Generate();
-    }
-
+        
     public void Generate()
     {
         folder = new GameObject("Generate World");
