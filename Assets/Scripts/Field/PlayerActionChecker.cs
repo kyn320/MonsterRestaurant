@@ -2,50 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerActionChecker : MonoBehaviour
+public class PlayerActionChecker : SightChecker
 {
-    public LayerMask layerMask;
+    //TODO :: 시야에 들어오면 채집 액션으로 변경
 
-    public List<GameObject> objectList;
+    PlayerBehaviour playerBehaviour;
 
-    private void OnTriggerEnter(Collider _col)
+    protected override void Awake()
     {
-        if (layerMask.value.Equals(1 << _col.gameObject.layer))
-        {
-            objectList.Add(_col.gameObject);
-        }
+        playerBehaviour = transform.root.GetComponent<PlayerBehaviour>();
+
+        base.Awake();
     }
 
-    private void OnTriggerExit(Collider _col)
-    {
-        if (layerMask.value.Equals(1 << _col.gameObject.layer))
-        {
-            objectList.Remove(_col.gameObject);
-        }
-    }
 
-    public bool IsAround()
-    {
-        return objectList.Count > 0;
-    }
-
-    public GameObject NearObject()
-    {
-        int index = -1;
-        float distance = 999f;
-
-
-        for (int i = 0; i < objectList.Count; ++i)
-        {
-            float sqr = (objectList[i].transform.position - transform.position).sqrMagnitude;
-            if (sqr < distance)
-            {
-                distance = sqr;
-                index = i;
-            }
-        }
-
-        return objectList[index];
-    }
 
 }

@@ -20,19 +20,34 @@ public class MonsterBehaviour : MonoBehaviour
 
     public bool isMove = false;
 
+    MonsterSightChecker sightChecker;
+
     private void Awake()
     {
+        sightChecker = transform.GetComponentInChildren<MonsterSightChecker>();
         agent = GetComponent<NavMeshAgent>();
         ri = GetComponent<Rigidbody>();
-        FieldManager.Instance.monsterNavMeshAction += Move;
+        FieldManager.Instance.monsterNavMeshAction += InitMove;
+    }
+
+    private void Start()
+    {
+        sightChecker.SetSight(monster.Sight + 2f);
         hp = monster.Hp;
     }
 
-    public void Move()
+    public void InitMove()
     {
+        if (target != null)
+        {
+            agent.destination = target.position;
+        }
+        else
+        {
+            agent.destination = RandomPos();
+        }
         agent.stoppingDistance = stopDistance;
         agent.speed = moveSpeed;
-        agent.destination = target.position;
         isMove = true;
     }
 
@@ -54,6 +69,29 @@ public class MonsterBehaviour : MonoBehaviour
     public void KnockBack(float _power)
     {
         ri.AddForce(-transform.forward * _power, ForceMode.Impulse);
+    }
+
+    private Vector3 RandomPos()
+    {
+        Vector3 pos = Vector3.zero;
+
+        int loopCount = 10;
+        while (loopCount > 0)
+        {
+
+            pos = transform.position + Random.insideUnitSphere * 100f * monster.Sight;
+            pos.y = transform.position.y;
+            
+            RaycastHit hit;
+            Debug.DrawRay(pos + Vector3.up * 1f, Vector3.down * 30f, Color.blue, 5000f);
+            if (Physics.Raycast(pos + Vector3.up * 1f, Vector3.down, out hit, 30f, LayerMask.GetMask("Walkable")))
+            {
+                return pos;
+            }
+            --loopCount;
+        }
+
+        return pos;
     }
 
 }
