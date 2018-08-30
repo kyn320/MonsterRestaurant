@@ -23,7 +23,8 @@ public class Spawner : MonoBehaviour
     {
         if (isAutoSpawn)
         {
-            FieldManager.Instance.spawnAction += Spawn;
+            SpawnManager.Instance.AddSpawnList(this);
+            SpawnManager.Instance.spawnAction += Spawn;
 
             print("spawn event add");
         }

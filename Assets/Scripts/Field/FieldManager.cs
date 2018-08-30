@@ -7,10 +7,6 @@ using UnityEngine.Events;
  블럭의 주변을 가져와야함
  EX) 물 주변, 특정 블럭 근처 
 
- 블럭을 주변 생태계와 알맞게 적용해야함.
- EX) 물 근처 땅 블럭들은 더 짙은 색이나, 물에 젖은 색상 텍스쳐로 변경,
- 물 근처 땅 블럭은 젖어있는 상태로 전환
-
 */
 
 public class FieldManager : Singleton<FieldManager>
@@ -21,11 +17,13 @@ public class FieldManager : Singleton<FieldManager>
 
     public UnityAction monsterNavMeshAction;
 
-    public UnityAction spawnAction;
 
     [SerializeField]
     MapGenerator mapGenerator;
 
+    [SerializeField]
+    SpawnManager spawnManager;
+    
     private void OnEnable()
     {
         mapGenerator.SetMapCategory(ConvertFieldCategoryToString(category));
@@ -33,7 +31,7 @@ public class FieldManager : Singleton<FieldManager>
 
         SetArea(mapGenerator.walkable, mapGenerator.notWalkable);
 
-        SpawnAction();
+        spawnManager.SpawnAction();
 
         mapGenerator.SetQuater();
         mapGenerator.BakeNavMesh();
@@ -49,18 +47,6 @@ public class FieldManager : Singleton<FieldManager>
     {
         if (monsterNavMeshAction != null)
             monsterNavMeshAction.Invoke();
-    }
-
-    public void SpawnAction()
-    {
-        if (spawnAction != null)
-        {
-            spawnAction.Invoke();
-
-
-            print("spawn action");
-        }
-
     }
 
     public void SetArea(GameObject _walkable, GameObject _notWalkable)
