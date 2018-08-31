@@ -14,12 +14,14 @@ public class DropItem : MonoBehaviour
 
     float sinHeight = 0.25f;
 
+    bool isWait = false;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void SetItem(int _id)
+    public void SetItem(int _id, Vector3 _pos)
     {
         if (_id >= 150)
         {
@@ -32,13 +34,55 @@ public class DropItem : MonoBehaviour
             spriteRenderer.sprite = item.Icon;
         }
 
+        isWait = false;
+        moveMent = StartCoroutine(DropMove(_pos));
 
     }
 
-    private void Update()
+    public void GetItem(Transform _target) {
+        if (!isWait)
+            return;
+
+        isWait = false;
+        StartCoroutine(DragMove(_target));
+    }
+
+    Coroutine moveMent = null;
+
+    IEnumerator DropMove(Vector3 _pos) {
+        float speed = 1f;
+        while ((_pos - transform.position).sqrMagnitude > 0.2f)
+        {
+            transform.position = Vector3.Lerp(transform.position, _pos, Time.deltaTime * speed);
+            speed += Time.deltaTime * 20f;
+            yield return null;
+        }
+        isWait = true;
+        moveMent = StartCoroutine(WaitMove());
+    }
+
+    IEnumerator WaitMove()
     {
-        transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.up * Mathf.Sin(Time.time) * sinHeight, Time.deltaTime);
+        while (isWait)
+        {
+            transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.up * Mathf.Sin(Time.time) * sinHeight, Time.deltaTime);
+
+            yield return null;
+        }
     }
 
+    IEnumerator DragMove(Transform _target)
+    {
+        float speed = 1f;
+        while ((_target.position - transform.position).sqrMagnitude > 0.3f)
+        {
+            transform.position = Vector3.Lerp(transform.position, _target.position, Time.deltaTime * speed);
+            speed += Time.deltaTime * 20f;
+            yield return null;
+        }
+
+        moveMent = null;
+        gameObject.SetActive(false);
+    }
 
 }

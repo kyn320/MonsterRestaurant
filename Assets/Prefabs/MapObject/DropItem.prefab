@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4151551157789800}
   - component: {fileID: 212766823993027252}
   - component: {fileID: 114587554144166616}
+  - component: {fileID: 135468320132287136}
   m_Layer: 0
   m_Name: DropItem
-  m_TagString: Untagged
+  m_TagString: DropItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1635367993573784}
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8991934, y: 197.67188, z: -27.358397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,6 +58,25 @@ MonoBehaviour:
     id: 0
     context: 
     icon: {fileID: 0}
+  recipe:
+    name: 
+    id: 0
+    context: 
+    icon: {fileID: 0}
+    combination: 
+    price: 0
+--- !u!135 &135468320132287136
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635367993573784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212766823993027252
 SpriteRenderer:
   m_ObjectHideFlags: 1

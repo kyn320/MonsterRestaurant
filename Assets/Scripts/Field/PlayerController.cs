@@ -91,5 +91,13 @@ public class PlayerController : MonoBehaviour
         v = _axis.y;
     }
 
+    private void OnTriggerEnter(Collider _other)
+    {
+        if (_other.CompareTag("DropItem"))
+        {
+            _other.gameObject.GetComponent<DropItem>().GetItem(transform);
+        }
+    }
+
 }
 

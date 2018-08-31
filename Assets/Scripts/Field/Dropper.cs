@@ -71,8 +71,8 @@ public class Dropper : MonoBehaviour
                 }
             }
 
-            GameObject g = Instantiate(dropItemPrefab, pos, Quaternion.Euler(40f, 0, 0));
-            g.GetComponent<DropItem>().SetItem(dropItemList[randomItemIndex]);
+            GameObject g = Instantiate(dropItemPrefab, transform.position, Quaternion.Euler(40f, 0, 0));
+            g.GetComponent<DropItem>().SetItem(dropItemList[randomItemIndex], pos);
 
         }
 
