@@ -862,7 +862,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4913003092110856, guid: 1ab646a9df66f884881890f9ef67b236, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ab646a9df66f884881890f9ef67b236, type: 2}
@@ -1253,7 +1253,7 @@ RectTransform:
   - {fileID: 77344596}
   - {fileID: 1109635906}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 596418259}
   - component: {fileID: 596418258}
   m_Layer: 0
-  m_Name: ObjectSpawner_Grass1 (1)
+  m_Name: MonsterSpawner_WildBoar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,6 +1398,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 0
 --- !u!4 &596418259
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1593,7 @@ GameObject:
   - component: {fileID: 797480167}
   - component: {fileID: 797480166}
   m_Layer: 0
-  m_Name: ObjectSpawner_Grass1 (2)
+  m_Name: MonsterSpawner_Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1619,6 +1620,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 0
 --- !u!4 &797480167
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,7 +1647,7 @@ GameObject:
   - component: {fileID: 891248860}
   - component: {fileID: 891248859}
   m_Layer: 0
-  m_Name: ObjectSpawner_Grass1 (3)
+  m_Name: MonsterSpawner_Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1672,6 +1674,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 0
 --- !u!4 &891248860
 Transform:
   m_ObjectHideFlags: 0
@@ -1724,13 +1727,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4284691655637872, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114184859889466190, guid: 00781770fcb35764e938dd9ab11646df,
         type: 2}
       propertyPath: isAttack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1855371926102430, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
   m_IsPrefabParent: 0
@@ -1775,6 +1783,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 1
 --- !u!4 &917549308
 Transform:
   m_ObjectHideFlags: 0
@@ -1791,7 +1800,7 @@ Transform:
   - {fileID: 1577708043}
   - {fileID: 718743839}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919126703
 GameObject:
@@ -1834,6 +1843,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 1
 --- !u!4 &919126705
 Transform:
   m_ObjectHideFlags: 0
@@ -1850,7 +1860,7 @@ Transform:
   - {fileID: 29514592}
   - {fileID: 39511042}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923580688
 GameObject:
@@ -1981,6 +1991,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 1
 --- !u!4 &964270874
 Transform:
   m_ObjectHideFlags: 0
@@ -2449,6 +2460,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 1
 --- !u!4 &1236794729
 Transform:
   m_ObjectHideFlags: 0
@@ -2465,7 +2477,7 @@ Transform:
   - {fileID: 1385811031}
   - {fileID: 1116844416}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352034013
 GameObject:
@@ -2599,6 +2611,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 1
 --- !u!4 &1551289396
 Transform:
   m_ObjectHideFlags: 0
@@ -2615,7 +2628,7 @@ Transform:
   - {fileID: 1730786677}
   - {fileID: 1091101760}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564606042
 GameObject:
@@ -2748,7 +2761,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4128983204679408, guid: a4f04c145d859664d9d5328b7072a7e3, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4f04c145d859664d9d5328b7072a7e3, type: 2}
@@ -3188,6 +3201,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isAutoSpawn: 1
+  isEffectedBakeNav: 1
 --- !u!4 &2017659328
 Transform:
   m_ObjectHideFlags: 0
@@ -3204,7 +3218,7 @@ Transform:
   - {fileID: 959001936}
   - {fileID: 1808311621}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041107616
 GameObject:

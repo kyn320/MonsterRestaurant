@@ -8,14 +8,25 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public List<Spawner> spawnerList;
 
-    public UnityAction spawnAction;
+    public UnityAction bakeSpawnAction;
+
+    public UnityAction notBakeSpawnAction;
 
 
-    public void SpawnAction()
+    public void SpawnBakeAction()
     {
-        if (spawnAction != null)
+        if (bakeSpawnAction != null)
         {
-            spawnAction.Invoke();
+            bakeSpawnAction.Invoke();
+        }
+
+    }
+
+    public void SpawnNotBakeAction()
+    {
+        if (notBakeSpawnAction != null)
+        {
+            notBakeSpawnAction.Invoke();
         }
 
     }

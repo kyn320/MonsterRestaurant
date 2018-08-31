@@ -17,7 +17,7 @@ public class SightChecker : MonoBehaviour
     public UnityAction exitSightEvent;
 
     [SerializeField]
-    SphereCollider sphereCollider;
+    protected SphereCollider sphereCollider;
 
     protected virtual void Awake()
     {

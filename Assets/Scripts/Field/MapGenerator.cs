@@ -105,6 +105,7 @@ public class MapGenerator : MonoBehaviour
         walkable.AddComponent<NavMeshSurface>();
         walkable.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
         walkable.GetComponent<NavMeshSurface>().defaultArea = 0;
+        walkable.GetComponent<NavMeshSurface>().useGeometry = NavMeshCollectGeometry.PhysicsColliders;
         walkable.GetComponent<NavMeshSurface>().BuildNavMesh();
 
         notWalkable.AddComponent<NavMeshSurface>();

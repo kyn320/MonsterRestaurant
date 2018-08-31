@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour
     GameObject folder;
 
     public bool isAutoSpawn = true;
+    public bool isEffectedBakeNav = true;
 
     List<GameObject> objectList = new List<GameObject>();
 
@@ -24,7 +25,11 @@ public class Spawner : MonoBehaviour
         if (isAutoSpawn)
         {
             SpawnManager.Instance.AddSpawnList(this);
-            SpawnManager.Instance.spawnAction += Spawn;
+
+            if (isEffectedBakeNav)
+                SpawnManager.Instance.bakeSpawnAction += Spawn;
+            else
+                SpawnManager.Instance.notBakeSpawnAction += Spawn;
 
             print("spawn event add");
         }

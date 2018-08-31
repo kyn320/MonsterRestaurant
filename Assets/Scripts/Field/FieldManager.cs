@@ -31,10 +31,12 @@ public class FieldManager : Singleton<FieldManager>
 
         SetArea(mapGenerator.walkable, mapGenerator.notWalkable);
 
-        spawnManager.SpawnAction();
+        spawnManager.SpawnBakeAction();
 
         mapGenerator.SetQuater();
         mapGenerator.BakeNavMesh();
+
+        spawnManager.SpawnNotBakeAction();
 
     }
 

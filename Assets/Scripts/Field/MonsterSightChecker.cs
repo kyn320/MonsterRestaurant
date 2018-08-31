@@ -16,11 +16,15 @@ public class MonsterSightChecker : SightChecker
 
     public void SightEnter()
     {
-        monsterBehaviour.target = SetTarget();
+        monsterBehaviour.SetDestination(SetTarget());
+
+        sphereCollider.radius *= 2f;
     }
 
-    public void SightExit() {
-        monsterBehaviour.target = null;
+    public void SightExit()
+    {
+        monsterBehaviour.SetDestination(null);
+        sphereCollider.radius *= 0.5f;
     }
 
 }

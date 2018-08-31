@@ -367,15 +367,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4971593214987712}
-  - component: {fileID: 54793021607193890}
   - component: {fileID: 195566867797069052}
   - component: {fileID: 114018571303229550}
   - component: {fileID: 136943589603757620}
   - component: {fileID: 114442053258144922}
+  - component: {fileID: 54237371814981064}
   m_Layer: 0
   m_Name: WildBoar
   m_TagString: Monster
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1324,7 +1324,7 @@ Transform:
   m_Father: {fileID: 4098031043755866}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54793021607193890
+--- !u!54 &54237371814981064
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1334,7 +1334,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1389,8 +1389,9 @@ MonoBehaviour:
     attacktype: 0
   state: 0
   hp: 0
-  moveSpeed: 5
-  stopDistance: 3
+  stateChangeTime: 0
+  moveSpeed: 3
+  stopDistance: 0.1
   target: {fileID: 0}
 --- !u!114 &114442053258144922
 MonoBehaviour:
@@ -1538,10 +1539,10 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 1.5
   m_BaseOffset: 0.5

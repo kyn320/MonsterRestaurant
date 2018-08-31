@@ -16,6 +16,9 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField]
     float hp = 0;
 
+    [SerializeField]
+    float stateChangeTime = 0f;
+
     NavMeshAgent agent;
     Rigidbody ri;
     Animator animator;
@@ -48,6 +51,9 @@ public class MonsterBehaviour : MonoBehaviour
 
         sightChecker.SetSight(monster.Sight + 2f);
         hp = monster.Hp;
+
+        StartCoroutine(UpdateState());
+
     }
 
     public void InitMove()
@@ -65,19 +71,73 @@ public class MonsterBehaviour : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (!agent.isStopped)
-            animator.SetFloat("Move", 1);
-        else
-            animator.SetFloat("Move", 0);
-
-        print(gameObject.name + " / isStopped = " + agent.isStopped);
+        ri.velocity = agent.velocity;
     }
 
-    public void UpdateDestination(Transform _target) {
-        if (target != null) {
+    public void SetDestination(Transform _target)
+    {
+        target = _target;
 
+        if (target == null)
+        {
+            agent.SetDestination(RandomPos());
+        }
+        else
+            agent.SetDestination(_target.position);
+
+        ChangeState(MonsterState.Move);
+    }
+
+    private bool CheckReachedDestination()
+    {
+        return (agent.destination - transform.position).sqrMagnitude <= (agent.stoppingDistance * agent.stoppingDistance);
+    }
+
+    public void ChangeRandomState(float _changeTime = 0f)
+    {
+        state = (MonsterState)Random.Range(0, 3);
+        switch (state)
+        {
+            case MonsterState.Idle:
+                animator.SetFloat("Move", 0);
+                stateChangeTime = Random.Range(1f, 5f);
+                break;
+            case MonsterState.Move:
+                agent.isStopped = false;
+                animator.SetFloat("Move", 1);
+                agent.SetDestination(RandomPos());
+                break;
+            case MonsterState.Attack:
+                animator.SetInteger("Attack", 1);
+                break;
+            case MonsterState.Die:
+                animator.SetBool("Die", true);
+                break;
+        }
+    }
+
+    public void ChangeState(MonsterState _state, float _changeTime = 0f)
+    {
+        state = _state;
+
+        switch (state)
+        {
+            case MonsterState.Idle:
+                animator.SetFloat("Move", 0);
+                stateChangeTime = Random.Range(1f, 5f);
+                break;
+            case MonsterState.Move:
+                agent.isStopped = false;
+                animator.SetFloat("Move", 1);
+                break;
+            case MonsterState.Attack:
+                animator.SetInteger("Attack", 1);
+                break;
+            case MonsterState.Die:
+                animator.SetBool("Die", true);
+                break;
         }
     }
 
@@ -85,20 +145,37 @@ public class MonsterBehaviour : MonoBehaviour
     {
         while (true)
         {
-
             switch (state)
             {
                 case MonsterState.Idle:
-
+                    stateChangeTime -= 0.1f;
+                    if (stateChangeTime <= 0)
+                        ChangeRandomState();
                     break;
-                case MonsterState.Walk:
+                case MonsterState.Move:
+                    if (target != null)
+                        agent.SetDestination(target.position);
 
+                    if (CheckReachedDestination())
+                    {
+                        agent.isStopped = true;
+                        if (target != null)
+                        {
+                            ChangeState(MonsterState.Attack);
+                        }
+                        else
+                        {
+                            ChangeRandomState();
+                        }
+                    }
                     break;
                 case MonsterState.Attack:
-
+                    if (!CheckReachedDestination())
+                    {
+                        SetDestination(target);
+                    }
                     break;
                 case MonsterState.Die:
-
                     break;
             }
 
@@ -152,7 +229,7 @@ public class MonsterBehaviour : MonoBehaviour
 public enum MonsterState
 {
     Idle,
-    Walk,
+    Move,
     Attack,
     Die
 }
