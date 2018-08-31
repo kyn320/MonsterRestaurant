@@ -37,7 +37,7 @@ public class Recipe : ScriptableObject
         if (dataArray == null)
             dataArray = new RecipeData[0];
     }
-
+    
     //
     // Write a proper query methods for retrieving data.
     //
@@ -46,7 +46,7 @@ public class Recipe : ScriptableObject
     //    return Array.Find(dataArray, d => d.Key == key);
     //}
 
-    public RecipeData FindItemID(int id)
+	public RecipeData FindItemID(int id)
     {
         return Array.Find(dataArray, d => d.ID == id);
     }
@@ -55,4 +55,5 @@ public class Recipe : ScriptableObject
     {
         return dataArray[UnityEngine.Random.Range(0, dataArray.Length)];
     }
+
 }

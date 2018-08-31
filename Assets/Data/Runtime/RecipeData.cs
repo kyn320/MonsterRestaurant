@@ -29,7 +29,7 @@ public class RecipeData
   public string Combination { get {return combination; } set { combination = value;} }
   
   [SerializeField]
-  Sprite price;
-  public Sprite Price { get {return price; } set { price = value;} }
+  int price;
+  public int Price { get {return price; } set { price = value;} }
   
 }

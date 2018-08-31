@@ -34,7 +34,7 @@ public class Monster : ScriptableObject
         if (dataArray == null)
             dataArray = new MonsterData[0];
     }
-    
+
     //
     // Write a proper query methods for retrieving data.
     //
@@ -42,4 +42,15 @@ public class Monster : ScriptableObject
     //{
     //    return Array.Find(dataArray, d => d.Key == key);
     //}
+
+    public MonsterData FindItemID(int id)
+    {
+        return Array.Find(dataArray, d => d.ID == id);
+    }
+
+    public MonsterData GetRandomItem()
+    {
+        return dataArray[UnityEngine.Random.Range(0, dataArray.Length)];
+    }
+
 }
