@@ -1707,7 +1707,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4284691655637872, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.99
+      value: 0.994
       objectReference: {fileID: 0}
     - target: {fileID: 4284691655637872, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1729,16 +1729,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114184859889466190, guid: 00781770fcb35764e938dd9ab11646df,
-        type: 2}
-      propertyPath: isAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1855371926102430, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00781770fcb35764e938dd9ab11646df, type: 2}
   m_IsPrefabParent: 0
