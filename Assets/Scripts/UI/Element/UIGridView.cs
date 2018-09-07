@@ -17,6 +17,8 @@ public class UIGridView : MonoBehaviour
 
     public Transform viewTransform;
 
+
+
     public virtual void CreateSlot()
     {
         for (int t = 0; t < rowCount * colCount; t++)
@@ -28,6 +30,7 @@ public class UIGridView : MonoBehaviour
             }
         }
         UpdateSlot();
+
     }
 
     public virtual void UpdateSlot()

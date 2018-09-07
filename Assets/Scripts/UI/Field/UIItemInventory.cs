@@ -12,12 +12,14 @@ public class UIItemInventory : UIGridView
 
     [SerializeField]
     UIDetailView detailView;
-
+    
     private void Start()
     {
-        ViewGold(Inventory.GetGold());
         CreateSlot();
+        ViewGold(Inventory.GetGold());
+        CloseView();
     }
+
 
     public void ViewGold(int _gold)
     {
@@ -45,6 +47,7 @@ public class UIItemInventory : UIGridView
                 s.clickEvent = OpenDetail;
             }
         }
+        GetComponent<RectTransform>().ForceUpdateRectTransforms();
     }
 
     public void OpenDetail(int _index)
