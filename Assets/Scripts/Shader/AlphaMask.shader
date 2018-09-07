@@ -10,7 +10,7 @@ Properties {
  
 SubShader {
     Tags {"Queue"="AlphaTest" "IgnoreProjector"="True" "RenderType"="TransparentCutout"}
-    LOD 100
+    LOD 200
    
     // Non-lightmapped
     Pass {
@@ -26,7 +26,7 @@ SubShader {
             Emission [_Emission]  
         }
         Lighting On
-        SeparateSpecular On
+        //SeparateSpecular On
         SetTexture [_MainTex] {
             Combine texture * primary DOUBLE, texture * primary
         }
@@ -91,7 +91,6 @@ SubShader {
 CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag
-#pragma multi_compile_shadowcaster
 #include "UnityCG.cginc"
  
 struct v2f {

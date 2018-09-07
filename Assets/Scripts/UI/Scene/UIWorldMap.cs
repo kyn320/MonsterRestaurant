@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class UIWorldMap : MonoBehaviour
 {
 
+    [SerializeField]
+    UIItemInventory inventoryView;
+
     public void OnHunter()
     {
 
@@ -18,7 +21,7 @@ public class UIWorldMap : MonoBehaviour
 
     public void OnInventory()
     {
-
+        inventoryView.OpenView();
     }
 
     public void OnEquip()
