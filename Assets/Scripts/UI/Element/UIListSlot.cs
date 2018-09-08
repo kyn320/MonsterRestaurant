@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIListSlot : MonoBehaviour {
+public class UIListSlot : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Image iconImage;
+
+    public Text nameText;
+    public Text contextText;
+
+
+    public virtual void SetData(Sprite _icon, string _name, string _context)
+    {
+
+        iconImage.sprite = _icon;
+        nameText.text = _name;
+        contextText.text = _context;
+
+    }
+
 }
