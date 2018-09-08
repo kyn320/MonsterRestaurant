@@ -12,13 +12,13 @@ public class UIItemInventory : UIGridView
 
     [SerializeField]
     UIDetailView detailView;
-    
+
     private void Start()
     {
         CreateSlot();
         ViewGold(Inventory.GetGold());
-        CloseView();
     }
+
 
 
     public void ViewGold(int _gold)
@@ -26,11 +26,27 @@ public class UIItemInventory : UIGridView
         goldText.text = string.Format("{0}G", _gold);
     }
 
+    public override void CreateSlot()
+    {
+        int slotCount = Inventory.GetInventorySize();
+
+        for (int t = 0; t < slotCount; t++)
+        {
+            if (t >= slotList.Count)
+            {
+                UIGridSlot s = Instantiate(slotPrefab, viewTransform).GetComponent<UIGridSlot>();
+                slotList.Add(s);
+            }
+        }
+        UpdateSlot();
+
+    }
 
     public override void UpdateSlot()
     {
         itemList = Inventory.GetItemList();
         itemCountList = Inventory.GetItemCountList();
+
 
         for (int i = 0; i < slotList.Count; i++)
         {
@@ -38,7 +54,7 @@ public class UIItemInventory : UIGridView
             if (i >= itemList.Count)
             {
                 s.SetSlot(-1, null, 0);
-                s.clickEvent += OpenDetail;
+                s.clickEvent = null;
             }
             else
             {

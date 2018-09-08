@@ -8,15 +8,17 @@ public class UIWorldMap : MonoBehaviour
 
     [SerializeField]
     UIItemInventory inventoryView;
+    [SerializeField]
+    UINpcHire npcHireView;
 
     public void OnHunter()
     {
-
+        npcHireView.OpenView(1);
     }
 
     public void OnGatherer()
     {
-
+        npcHireView.OpenView(2);
     }
 
     public void OnInventory()

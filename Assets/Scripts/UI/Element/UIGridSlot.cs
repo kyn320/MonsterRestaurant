@@ -4,17 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class UIGridSlot : MonoBehaviour
+public class UIGridSlot : UISlot
 {
-
-    public int index;
-    public Image itemImage;
     public Text haveText;
 
-    public delegate void ClickEvent(int _index);
-    public ClickEvent clickEvent;
-
-   
     public virtual void SetSlot(int _index, Sprite _icon, int _value)
     {
 
@@ -22,12 +15,12 @@ public class UIGridSlot : MonoBehaviour
 
         if (_icon == null)
         {
-            itemImage.enabled = false;
+            iconImage.enabled = false;
         }
         else
         {
-            itemImage.enabled = true;
-            itemImage.sprite = _icon;
+            iconImage.enabled = true;
+            iconImage.sprite = _icon;
         }
 
         if (_value > 0)
@@ -35,11 +28,5 @@ public class UIGridSlot : MonoBehaviour
         else
             haveText.text = "";
     }
-
-    public void OnDetail()
-    {
-        clickEvent.Invoke(index);
-    }
-
 
 }

@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class Inventory : Singleton<Inventory>
 {
+    public int maxSlotSize;
+
     public List<int> itemList;
     public List<int> itemCountList;
 
@@ -87,9 +89,23 @@ public class Inventory : Singleton<Inventory>
         return Instance.itemCountList;
     }
 
+    public static List<int> GetRecipeList()
+    {
+        return Instance.recipeList;
+    }
+
+    public static List<int> GetRecipeCountList()
+    {
+        return Instance.recipeCountList;
+    }
+
     public static int GetGold()
     {
         return Instance.gold;
+    }
+
+    public static int GetInventorySize() {
+        return Instance.maxSlotSize;
     }
 
 }

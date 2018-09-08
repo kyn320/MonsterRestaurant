@@ -18,4 +18,15 @@ public class UIRecipeHouse : MonoBehaviour {
     }
 
 
+
+    public virtual void OpenView()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public virtual void CloseView()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

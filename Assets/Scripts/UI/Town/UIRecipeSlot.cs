@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class UIRecipeSlot : UIListSlot
 {
-    public Image[] combinationImage;
-    public Text[] combinationText;
+    public GameObject detailView;
+
+    public UIGridSlot[] combinationSlot;
+
+    public ClickEvent combinationClickEvent;
 
     public Text goldText;
 
-    public void SetData(Sprite _icon, string _name, string _context, string _combination, string _price)
+    public bool isOpen = false;
+
+    public void SetSlot(int _index, Sprite _icon, string _name, string _context, string _combination, int _price)
     {
-        SetData(_icon, _name, _context);
+        base.SetSlot(_index, _icon, _name, _context);
         SetCombination(_combination);
-        goldText.text = _price.ToString();
+        goldText.text = string.Format("{0}G", _price);
     }
 
 
@@ -22,8 +27,18 @@ public class UIRecipeSlot : UIListSlot
     {
         string[] combination = _combination.Split('|');
 
-        for (int i = 0; i < combination.Length; ++i)
+        for (int i = 0; i < combinationSlot.Length; ++i)
         {
+
+            if (i >= combination.Length)
+            {
+
+                combinationSlot[i].SetSlot(-1, null, 0);
+                combinationSlot[i].clickEvent = null;
+                continue;
+            }
+
+
             string[] data = combination[i].Split('/');
 
             int id = int.Parse(data[0]);
@@ -31,9 +46,29 @@ public class UIRecipeSlot : UIListSlot
 
             Sprite icon = ItemDB.Instance.FindItem(id).Icon;
 
-            combinationImage[i].sprite = icon;
-            combinationText[i].text = string.Format("x{0}", value);
+            combinationSlot[i].SetSlot(id, icon, value);
+            combinationSlot[i].clickEvent = combinationClickEvent;
         }
+    }
+
+    public void ToggleDetailView()
+    {
+        if (isOpen)
+            CloseDetailView();
+        else
+            OpenDetailView();
+    }
+
+    public void OpenDetailView()
+    {
+        detailView.SetActive(true);
+        isOpen = true;
+    }
+
+    public void CloseDetailView()
+    {
+        detailView.SetActive(false);
+        isOpen = false;
     }
 
 }
