@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33224463658640092}
   - component: {fileID: 23726227316452194}
   - component: {fileID: 65618484581794386}
+  - component: {fileID: 205556723681357816}
   m_Layer: 0
   m_Name: Grass_House_2
   m_TagString: Untagged
@@ -96,3 +97,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.780245, y: 2.6494496, z: 3.557703}
   m_Center: {x: -0.00000011920929, y: 0.00000017881395, z: 1.7808883}
+--- !u!205 &205556723681357816
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1895214577243646}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.00000023841858, z: 1.7808886}
+  m_Size: 4.780245
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.02472848
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23726227316452194}
+  - screenRelativeHeight: 0.02472848
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.023650518
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

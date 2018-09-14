@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookPuzzleManager : MonoBehaviour
+public class CookPuzzleManager : Singleton<CookPuzzleManager>
 {
     public GameObject slotPrefab;
 
@@ -31,7 +31,7 @@ public class CookPuzzleManager : MonoBehaviour
         SetRecipePuzzle();
         SetRandomEmptyPuzzle();
 
-        uIRestaurant.combinationView.CreateCombination(materialIDList);
+        uIRestaurant.combinationView.CreateCombination(recipe.Icon, materialIDList);
     }
 
     public void SetItemList()

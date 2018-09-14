@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4822756105243968}
   - component: {fileID: 33816265930725344}
   - component: {fileID: 23429889406059388}
+  - component: {fileID: 205427558410142694}
   m_Layer: 0
   m_Name: grass1
   m_TagString: Untagged
@@ -83,3 +84,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404448973081174}
   m_Mesh: {fileID: 4300000, guid: 3c594eb7bd2191248a1424b9f30e7db0, type: 3}
+--- !u!205 &205427558410142694
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404448973081174}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.04543899, y: 0.023070514, z: 0.051158927}
+  m_Size: 0.4532326
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.023145577
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23429889406059388}
+  - screenRelativeHeight: 0.023145577
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.023145577
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

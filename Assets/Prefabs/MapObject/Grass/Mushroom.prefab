@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4915719238041448}
   - component: {fileID: 33299143393451952}
   - component: {fileID: 23883558674330296}
+  - component: {fileID: 205669045764748464}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -83,3 +84,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1393926371184576}
   m_Mesh: {fileID: 4300000, guid: 83ff839c5860d8c42be6a0412af47949, type: 3}
+--- !u!205 &205669045764748464
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1393926371184576}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0064707063, y: -0.000000014901161, z: -0.087765135}
+  m_Size: 0.17598797
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.016649187
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23883558674330296}
+  - screenRelativeHeight: 0.016649187
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.016649187
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

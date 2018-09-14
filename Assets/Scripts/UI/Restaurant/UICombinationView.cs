@@ -23,7 +23,7 @@ public class UICombinationView : MonoBehaviour
     [SerializeField]
     Vector2 slotSize;
 
-    public void CreateCombination(List<int> idList)
+    public void CreateCombination(Sprite _recipeIcon, List<int> idList)
     {
         for (int i = 0; i < idList.Count; ++i)
         {
@@ -33,12 +33,18 @@ public class UICombinationView : MonoBehaviour
                 slotList.Add(g.GetComponent<UICombinationSlot>());
             }
 
-            slotList[i].SetIcon(ItemDB.Instance.FindItem(idList[i]).Icon);
+            if ((i + 1) == idList.Count)
+            {
+                slotList[slotList.Count - 1].SetIcon(_recipeIcon);
+            }
+            else
+            {
+                slotList[i].SetIcon(ItemDB.Instance.FindItem(idList[i]).Icon);
+            }
         }
 
         ResetIndex();
     }
-    // 600 >> 480 == 120
 
     public void UpdateIndex()
     {

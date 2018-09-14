@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23066029280326392}
   - component: {fileID: 65064200835385040}
   - component: {fileID: 114714201013437182}
+  - component: {fileID: 205879430442900044}
   m_Layer: 10
   m_Name: GrassBlock
   m_TagString: Untagged
@@ -109,3 +110,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileHeight: 0
+--- !u!205 &205879430442900044
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303284482716280}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.01664436
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23066029280326392}
+  - screenRelativeHeight: 0.01664436
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.01664436
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

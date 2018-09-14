@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -530,6 +530,18 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114311002940947674, guid: 4a9aa8384b536444c90fcf010812b6b8,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6e39f1e7f11a828488ab8c2ac040a38c,
+        type: 3}
+    - target: {fileID: 114853854598691826, guid: 4a9aa8384b536444c90fcf010812b6b8,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6e39f1e7f11a828488ab8c2ac040a38c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a9aa8384b536444c90fcf010812b6b8, type: 2}
   m_IsPrefabParent: 0
@@ -934,6 +946,18 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114311002940947674, guid: 4a9aa8384b536444c90fcf010812b6b8,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6e39f1e7f11a828488ab8c2ac040a38c,
+        type: 3}
+    - target: {fileID: 114853854598691826, guid: 4a9aa8384b536444c90fcf010812b6b8,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6e39f1e7f11a828488ab8c2ac040a38c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a9aa8384b536444c90fcf010812b6b8, type: 2}
   m_IsPrefabParent: 0
