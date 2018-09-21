@@ -35,11 +35,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (isInput)
-        //{
-        //    h = Input.GetAxis("Horizontal");
-        //    v = Input.GetAxis("Vertical");
-        //}
+#if UNITY_EDITOR
+        if (isInput)
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+        }
+#endif
 
 
         if (Mathf.Abs(h) > 0.2f || Mathf.Abs(v) > 0.2f)

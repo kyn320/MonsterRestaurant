@@ -11,4 +11,8 @@ public class UIField : MonoBehaviour {
         inventory.gameObject.SetActive(true);
     }
 
+    public void OnMap() {
+
+    }
+
 }
