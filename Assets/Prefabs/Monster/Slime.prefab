@@ -456,7 +456,7 @@ MonoBehaviour:
   hp: 0
   stateChangeTime: 0
   moveSpeed: 3
-  stopDistance: 0.1
+  stopDistance: 0.5
   target: {fileID: 0}
 --- !u!135 &135756819144617188
 SphereCollider:

@@ -28,6 +28,9 @@ public class MonsterBehaviour : MonoBehaviour
 
     public Transform target;
 
+    GameObject hpGauge;
+    UIGauge gauge;
+
     MonsterSightChecker sightChecker;
     Dropper dropper;
 
@@ -51,6 +54,12 @@ public class MonsterBehaviour : MonoBehaviour
 
         sightChecker.SetSight(monster.Sight + 2f);
         hp = monster.Hp;
+
+        hpGauge = FindObjectOfType<UIMonsterGaugeManager>().CreateGauge();
+        hpGauge.GetComponent<UITargetFollow>().SetTarget(transform);
+        gauge = hpGauge.GetComponent<UIGauge>();
+
+        gauge.SetGauge(null,0,hp,hp);
 
         StartCoroutine(UpdateState());
 
@@ -186,12 +195,17 @@ public class MonsterBehaviour : MonoBehaviour
     public void Damage(int _damage)
     {
         hp -= _damage;
+
+        gauge.UpdateValue(hp);
+
         KnockBack(25f);
 
         if (hp <= 0)
         {
             print("drop");
             dropper.Drop();
+            hpGauge.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 

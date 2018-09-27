@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerActionChecker actionChecker;
 
+
     [SerializeField]
     Vector3 dir = Vector3.zero;
 
@@ -52,7 +53,8 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotationSpeed);
 
         ri.velocity = new Vector3(h * moveSpeed, ri.velocity.y, v * moveSpeed);
-        playerBehaviour.ani.SetFloat("Move", ri.velocity.sqrMagnitude);
+        playerBehaviour.moveVelocity = ri.velocity.sqrMagnitude;
+        playerBehaviour.ani.SetFloat("Move", playerBehaviour.moveVelocity);
 
         if (Input.GetKeyDown(KeyCode.Space))
             ri.velocity = new Vector3(ri.velocity.x, jumpPower, ri.velocity.z);
@@ -98,6 +100,10 @@ public class PlayerController : MonoBehaviour
         if (_other.CompareTag("DropItem"))
         {
             _other.gameObject.GetComponent<DropItem>().GetItem(transform);
+
+        }
+        else if (_other.CompareTag("RestaurantArea")) {
+            SceneLoadManager.Instance.Load("Restaurant");
         }
     }
 

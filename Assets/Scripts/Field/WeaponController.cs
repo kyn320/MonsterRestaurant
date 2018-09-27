@@ -27,7 +27,7 @@ public class WeaponController : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             print("attack");
-            other.gameObject.GetComponent<MonsterBehaviour>().Damage(10000);
+            other.gameObject.GetComponent<MonsterBehaviour>().Damage(10);
         }
 
     }

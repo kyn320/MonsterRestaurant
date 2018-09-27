@@ -39,7 +39,8 @@ public class DropItem : MonoBehaviour
 
     }
 
-    public void GetItem(Transform _target) {
+    public void GetItem(Transform _target)
+    {
         if (!isWait)
             return;
 
@@ -49,7 +50,8 @@ public class DropItem : MonoBehaviour
 
     Coroutine moveMent = null;
 
-    IEnumerator DropMove(Vector3 _pos) {
+    IEnumerator DropMove(Vector3 _pos)
+    {
         float speed = 1f;
         while ((_pos - transform.position).sqrMagnitude > 0.2f)
         {
@@ -73,6 +75,9 @@ public class DropItem : MonoBehaviour
 
     IEnumerator DragMove(Transform _target)
     {
+        if (item != null)
+            Inventory.AddItem(item.ID, 1);
+
         float speed = 1f;
         while ((_target.position - transform.position).sqrMagnitude > 0.3f)
         {

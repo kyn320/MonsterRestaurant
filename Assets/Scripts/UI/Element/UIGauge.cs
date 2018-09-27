@@ -13,12 +13,32 @@ public class UIGauge : MonoBehaviour
     [SerializeField]
     float minValue, maxValue;
 
+    public Text nameText, valueText;
+
     public bool isInt = false;
 
     private void Awake()
     {
-        slider = GetComponent<Slider>();
+        slider = GetComponentInChildren<Slider>();
+        slider.wholeNumbers = isInt;
     }
-    
+
+    public void SetGauge(string _name, float _min, float _max, float _value)
+    {
+        if (_name != null)
+            nameText.text = _name;
+
+        slider.minValue = minValue = _min;
+        slider.maxValue = maxValue = _max;
+        UpdateValue(_value);
+    }
+
+    public void UpdateValue(float _value)
+    {
+        currentValue = Mathf.Clamp(_value, minValue, maxValue);
+        slider.value = currentValue;
+        valueText.text = string.Format("{0} / {1}", currentValue, maxValue);
+    }
+
 
 }

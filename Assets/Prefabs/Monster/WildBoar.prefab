@@ -1391,7 +1391,7 @@ MonoBehaviour:
   hp: 0
   stateChangeTime: 0
   moveSpeed: 3
-  stopDistance: 0.1
+  stopDistance: 0.7
   target: {fileID: 0}
 --- !u!114 &114442053258144922
 MonoBehaviour:
